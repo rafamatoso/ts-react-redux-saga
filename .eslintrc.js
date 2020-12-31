@@ -21,7 +21,7 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  plugins: ['react', 'import', 'jsx-a11y'],
+  plugins: ['react', 'import', 'jsx-a11y', 'prettier'],
   rules: {
     'react/react-in-jsx-scope': 'off',
     'react/jsx-filename-extension': [
