@@ -9,18 +9,25 @@ interface StateProps {
   repositories: Repository[];
 }
 
-type Props = StateProps
+interface DispatchProps {
+  loadRequest(): void;
+}
+
+type Props = StateProps & DispatchProps;
 
 class RepositoryList extends Component<Props> {
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  componentDidMount(): void { }
+  componentDidMount() {
+    const { loadRequest } = this.props;
+
+    loadRequest();
+  }
 
   render(): JSX.Element {
     const { repositories } = this.props;
 
     return (
       <ul>
-        {repositories.map((repository) => repository.name)}
+        {repositories.map((repository) => <li>{repository.name}</li>)}
       </ul>
     );
   }
@@ -30,8 +37,7 @@ const mapStateToProps = (state: ApplicationState) => ({
   repositories: state.repositories.data,
 });
 
-const mapDispatchToProps = (dispatch: Dispatch) => {
-  bindActionCreators(RepositoriesActions, dispatch);
-};
+// eslint-disable-next-line max-len
+const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators(RepositoriesActions, dispatch);
 
-export default connect(mapStateToProps)(RepositoryList);
+export default connect(mapStateToProps, mapDispatchToProps)(RepositoryList);
