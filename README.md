@@ -1,9 +1,9 @@
-# ts-react-redux-saga
+# 📚 ts-react-redux-saga
 
 Projeto que integra a API do Github, apresentando todos os repositórios de um dado usuário numa listagem simples, e que une os conceitos de Typescript, React, Redux e Redux-Saga.\
 Apresentado na vídeo-aula **[TypeScript com ReactJS, Redux e Redux Saga](https://www.youtube.com/watch?v=OXxul6AvXNs&t)** da **[Rocketseat](https://rocketseat.com.br/)**.
 
-## Tecnologias
+## 💻 Tecnologias
 
 - [Typescript](https://www.typescriptlang.org/)
 - [ReactJs](https://pt-br.reactjs.org/)
@@ -14,7 +14,7 @@ Apresentado na vídeo-aula **[TypeScript com ReactJS, Redux e Redux Saga](https:
 - [eslint](https://eslint.org/)
 - [prettier](https://prettier.io/)
 
-## Executando o projeto
+## ✅ Executando o projeto
 
 No diretório raiz do projeto, execute o comando no terminal:
 
