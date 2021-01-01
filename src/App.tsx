@@ -1,9 +1,12 @@
 import { ReactElement } from 'react';
+import { Provider } from 'react-redux';
+import RepositoryList from './components/RepositoryList';
+import store from './store';
 
 const App = (): ReactElement => (
-  <div className="App">
-    <h1>Aplicação funcionando!</h1>
-  </div>
+  <Provider store={store}>
+    <RepositoryList />
+  </Provider>
 );
 
 export default App;
