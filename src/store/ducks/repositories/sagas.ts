@@ -4,6 +4,7 @@ import { loadFailure, loadSuccess } from './actions';
 
 const username = 'rafamatoso';
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function* load() {
   try {
     const response = yield call(api.get, `users/${username}/repos`);
