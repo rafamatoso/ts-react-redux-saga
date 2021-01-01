@@ -47,6 +47,8 @@ module.exports = {
     '@typescript-eslint/explicit-member-accessibility': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-use-before-define': ['error'],
+    'max-len': ['error', { code: 110 }],
+    'arrow-body-style': ['error', 'as-needed'],
   },
   settings: {
     'import/parsers': {

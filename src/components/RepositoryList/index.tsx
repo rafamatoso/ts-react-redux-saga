@@ -4,6 +4,7 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { ApplicationState } from '../../store';
 import { Repository } from '../../store/ducks/repositories/types';
 import * as RepositoriesActions from '../../store/ducks/repositories/actions';
+import RepositoryItem from '../RepositoryItem';
 
 interface StateProps {
   repositories: Repository[];
@@ -25,9 +26,13 @@ class RepositoryList extends Component<Props> {
   render(): JSX.Element {
     const { repositories } = this.props;
 
+    const renderRepositoryItem = (repository: Repository) => (
+      <RepositoryItem key={repository.id} repository={repository} />
+    );
+
     return (
       <ul>
-        {repositories.map((repository) => <li>{repository.name}</li>)}
+        {repositories.map((repository) => renderRepositoryItem(repository))}
       </ul>
     );
   }
@@ -37,7 +42,6 @@ const mapStateToProps = (state: ApplicationState) => ({
   repositories: state.repositories.data,
 });
 
-// eslint-disable-next-line max-len
 const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators(RepositoriesActions, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(RepositoryList);
