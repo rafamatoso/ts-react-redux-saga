@@ -1,21 +1,19 @@
 import {
   FormEvent, useCallback, useEffect, useRef,
 } from 'react';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { bindActionCreators, Dispatch } from 'redux';
 import { ApplicationState } from '../../store';
 import * as RepositoriesActions from '../../store/ducks/repositories/actions';
-import { Repository } from '../../store/ducks/repositories/types';
+
 import './styles.scss';
 
-interface Props {
-    loadRequest(username: string): void;
-    repositories: Repository[];
-}
-
-const Search: React.FC<Props> = ({ loadRequest, repositories }: Props) => {
+const Search: React.FC = () => {
   const history = useHistory();
+
+  const repositories = useSelector((state: ApplicationState) => state.repositories.data);
+
+  const dispatch = useDispatch();
 
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -24,7 +22,7 @@ const Search: React.FC<Props> = ({ loadRequest, repositories }: Props) => {
 
     const username = inputRef.current?.value || '';
 
-    loadRequest(username);
+    dispatch(RepositoriesActions.loadRequest(username));
   }, []);
 
   useEffect(() => {
@@ -49,10 +47,4 @@ const Search: React.FC<Props> = ({ loadRequest, repositories }: Props) => {
   );
 };
 
-const mapStateToProps = (state: ApplicationState) => ({
-  repositories: state.repositories.data,
-});
-
-const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators(RepositoriesActions, dispatch);
-
-export default connect(mapStateToProps, mapDispatchToProps)(Search);
+export default Search;
