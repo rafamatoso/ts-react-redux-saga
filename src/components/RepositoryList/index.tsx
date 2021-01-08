@@ -6,21 +6,29 @@ import { Repository } from '../../store/ducks/repositories/types';
 import * as RepositoriesActions from '../../store/ducks/repositories/actions';
 import RepositoryItem from '../RepositoryItem';
 
-interface StateProps {
+interface State {
+  username: string;
+}
+
+interface Props {
+  loadRequest(username: string): void;
   repositories: Repository[];
 }
 
-interface DispatchProps {
-  loadRequest(): void;
-}
+class RepositoryList extends Component<Props, State> {
+  constructor(props: Props) {
+    super(props);
 
-type Props = StateProps & DispatchProps;
+    this.state = {
+      username: 'rafamatoso',
+    };
+  }
 
-class RepositoryList extends Component<Props> {
   componentDidMount() {
+    const { username } = this.state;
     const { loadRequest } = this.props;
 
-    loadRequest();
+    loadRequest(username);
   }
 
   render(): JSX.Element {
@@ -31,9 +39,11 @@ class RepositoryList extends Component<Props> {
     );
 
     return (
-      <ul>
-        {repositories.map((repository) => renderRepositoryItem(repository))}
-      </ul>
+      <>
+        <ul>
+          {repositories.map((repository) => renderRepositoryItem(repository))}
+        </ul>
+      </>
     );
   }
 }
