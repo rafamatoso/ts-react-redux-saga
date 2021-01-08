@@ -1,5 +1,5 @@
 import {
-  FormEvent, useCallback, useEffect, useRef,
+  FormEvent, useCallback, useRef,
 } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
@@ -11,7 +11,7 @@ import './styles.scss';
 const Search: React.FC = () => {
   const history = useHistory();
 
-  const repositories = useSelector((state: ApplicationState) => state.repositories.data);
+  const repositories = useSelector((state: ApplicationState) => state.repositories);
 
   const dispatch = useDispatch();
 
@@ -23,13 +23,11 @@ const Search: React.FC = () => {
     const username = inputRef.current?.value || '';
 
     dispatch(RepositoriesActions.loadRequest(username));
-  }, []);
 
-  useEffect(() => {
-    if (repositories.length > 0) {
+    if (!repositories.error) {
       history.push('/result');
     }
-  }, [history, repositories.length]);
+  }, [dispatch, history, repositories.error]);
 
   return (
     <div id="search-container">
