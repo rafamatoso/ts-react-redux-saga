@@ -8,7 +8,7 @@
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
     "axios": "^0.21.1",
-    "node-sass": "^5.0.0",
+    "node-sass": "4.14.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-redux": "^7.2.2",
@@ -46,6 +46,7 @@
   },
   "devDependencies": {
     "@types/react-redux": "^7.1.14",
+    "@types/react-router-dom": "^5.1.7",
     "@types/redux-saga": "^0.10.5",
     "@typescript-eslint/eslint-plugin": "^4.11.1",
     "@typescript-eslint/parser": "^4.11.1",
