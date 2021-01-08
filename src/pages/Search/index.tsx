@@ -1,12 +1,37 @@
-import { FormEvent, useCallback, useRef } from 'react';
+import {
+  FormEvent, useCallback, useEffect, useRef,
+} from 'react';
+import { connect } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { bindActionCreators, Dispatch } from 'redux';
+import { ApplicationState } from '../../store';
+import * as RepositoriesActions from '../../store/ducks/repositories/actions';
+import { Repository } from '../../store/ducks/repositories/types';
 import './styles.scss';
 
-const Search = () => {
+interface Props {
+    loadRequest(username: string): void;
+    repositories: Repository[];
+}
+
+const Search: React.FC<Props> = ({ loadRequest, repositories }: Props) => {
+  const history = useHistory();
+
   const inputRef = useRef<HTMLInputElement>(null);
 
   const handleSubmit = useCallback((e: FormEvent) => {
     e.preventDefault();
+
+    const username = inputRef.current?.value || '';
+
+    loadRequest(username);
   }, []);
+
+  useEffect(() => {
+    if (repositories.length > 0) {
+      history.push('/result');
+    }
+  }, [history, repositories.length]);
 
   return (
     <div id="search-container">
@@ -18,10 +43,16 @@ const Search = () => {
           placeholder="Nome do usuário"
           ref={inputRef}
         />
-        <button type="submit">Pesquisar</button>
+        <button className="button" type="submit">Pesquisar</button>
       </form>
     </div>
   );
 };
 
-export default Search;
+const mapStateToProps = (state: ApplicationState) => ({
+  repositories: state.repositories.data,
+});
+
+const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators(RepositoriesActions, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Search);
