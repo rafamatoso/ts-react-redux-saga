@@ -15,12 +15,14 @@ const Search: React.FC = () => {
 
   const dispatch = useDispatch();
 
-  const inputRef = useRef<HTMLInputElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleSubmit = useCallback((e: FormEvent) => {
     e.preventDefault();
 
-    const username = inputRef.current?.value || '';
+    const inputElement = formRef.current?.elements.namedItem('username') as HTMLInputElement;
+
+    const username = inputElement?.value;
 
     dispatch(RepositoriesActions.loadRequest(username));
 
@@ -29,17 +31,23 @@ const Search: React.FC = () => {
     }
   }, [dispatch, history, repositories.error]);
 
+  const handleClearInput = useCallback((e: FormEvent) => {
+    e.preventDefault();
+
+    formRef.current?.reset();
+  }, []);
+
   return (
     <div id="search-container">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} ref={formRef}>
         <input
           type="text"
           name="username"
           className="input"
           placeholder="Nome do usuário"
-          ref={inputRef}
         />
-        <button className="button" type="submit">Pesquisar</button>
+        <button className="close-button" aria-label="Close" type="button" onClick={handleClearInput} />
+        <button className="submit-button" aria-label="Submit" type="submit">Pesquisar</button>
       </form>
     </div>
   );
