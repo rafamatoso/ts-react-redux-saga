@@ -15,7 +15,8 @@ O conceito inicial foi apresentado na vídeo-aula **[TypeScript com ReactJS, Red
 - [axios](https://github.com/axios/axios)
 - [eslint](https://eslint.org/)
 - [prettier](https://prettier.io/)
-- [sass](https://www.npmjs.com/package/sass)
+- [sass/scss](https://www.npmjs.com/package/sass)
+- [react-loading](https://www.npmjs.com/package/react-loading)
 
 ## ✅ Executando o projeto
 
