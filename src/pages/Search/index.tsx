@@ -1,5 +1,6 @@
 import {
-  FormEvent, useCallback, useRef,
+  ChangeEvent,
+  FormEvent, useCallback, useRef, useState,
 } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
@@ -10,6 +11,8 @@ import './styles.scss';
 
 const Search: React.FC = () => {
   const history = useHistory();
+
+  const [disabled, setDisabled] = useState(true);
 
   const repositories = useSelector((state: ApplicationState) => state.repositories);
 
@@ -33,6 +36,12 @@ const Search: React.FC = () => {
     }
   }, [dispatch, error, history, loading]);
 
+  const handleInputChanges = (e: ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
+
+    return value ? setDisabled(false) : setDisabled(true);
+  };
+
   const handleClearInput = useCallback((e: FormEvent) => {
     e.preventDefault();
 
@@ -47,9 +56,22 @@ const Search: React.FC = () => {
           name="username"
           className="input"
           placeholder="Nome do usuário"
+          onChange={(e) => handleInputChanges(e)}
         />
-        <button className="clear-button" aria-label="Close" type="button" onClick={handleClearInput} />
-        <button className="submit-button" aria-label="Submit" type="submit">Pesquisar</button>
+        <button
+          className="clear-button"
+          aria-label="Close"
+          type="button"
+          onClick={handleClearInput}
+        />
+        <button
+          className="submit-button"
+          aria-label="Submit"
+          type="submit"
+          disabled={disabled}
+        >
+          Pesquisar
+        </button>
       </form>
     </div>
   );
