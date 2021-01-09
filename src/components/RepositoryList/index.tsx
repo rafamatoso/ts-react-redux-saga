@@ -3,11 +3,7 @@ import { ApplicationState } from '../../store';
 import { Repository } from '../../store/ducks/repositories/types';
 import RepositoryItem from '../RepositoryItem';
 
-interface Props {
-  repositories: Repository[];
-}
-
-const RepositoryList: React.FC<Props> = () => {
+const RepositoryList: React.FC = () => {
   const repositories = useSelector((state: ApplicationState) => state.repositories);
 
   const { data } = repositories;
