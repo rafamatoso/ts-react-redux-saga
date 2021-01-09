@@ -4,7 +4,7 @@
   margin: 0.5rem 0;
   padding: 0.5rem;
   width: 500px;
-  border: 1px solid #c1c1c1;
+  border: 2px solid var(--color-border);
 
   li {
     list-style: none;
@@ -12,6 +12,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    font-weight: 600;
+  }
+
+  &:hover {
+    background-color: var(--color-item-bg);
+    color: var(--color-item-font);
   }
 }
 
