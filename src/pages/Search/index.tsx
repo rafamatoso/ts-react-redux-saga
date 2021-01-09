@@ -37,6 +37,8 @@ const Search: React.FC = () => {
     formRef.current?.reset();
   }, []);
 
+  console.log(repositories.data);
+
   return (
     <div id="search-container">
       <form onSubmit={handleSubmit} ref={formRef}>
@@ -46,7 +48,7 @@ const Search: React.FC = () => {
           className="input"
           placeholder="Nome do usuário"
         />
-        <button className="close-button" aria-label="Close" type="button" onClick={handleClearInput} />
+        <button className="clear-button" aria-label="Close" type="button" onClick={handleClearInput} />
         <button className="submit-button" aria-label="Submit" type="submit">Pesquisar</button>
       </form>
     </div>

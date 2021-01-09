@@ -1,7 +1,8 @@
 # 📚 ts-react-redux-saga
 
-Projeto que integra a API do Github, apresentando todos os repositórios de um dado usuário numa listagem simples, e que une os conceitos de Typescript, React, Redux e Redux-Saga.\
-Apresentado na vídeo-aula **[TypeScript com ReactJS, Redux e Redux Saga](https://www.youtube.com/watch?v=OXxul6AvXNs&t)** da **[Rocketseat](https://rocketseat.com.br/)**.
+Projeto onde é possível realizar uma busca pelos repositórios de um dado usuário a partir do seu nome no Github. Caso o usuário exista, será apresentada uma listagem dos repositórios.\
+A motivação para este projeto é unir os conceitos de Typescript, React, Hooks, Redux, Redux-Saga e outros.\
+O conceito inicial foi apresentado na vídeo-aula **[TypeScript com ReactJS, Redux e Redux Saga](https://www.youtube.com/watch?v=OXxul6AvXNs&t)** da **[Rocketseat](https://rocketseat.com.br/)**.
 
 ## 💻 Tecnologias
 
@@ -10,9 +11,11 @@ Apresentado na vídeo-aula **[TypeScript com ReactJS, Redux e Redux Saga](https:
 - [React Redux](https://react-redux.js.org/)
 - [Redux Saga](https://redux-saga.js.org/)
 - [typesafe-actions](https://github.com/piotrwitek/typesafe-actions)
+- [react-router-dom](https://reactrouter.com/web/guides/quick-start)
 - [axios](https://github.com/axios/axios)
 - [eslint](https://eslint.org/)
 - [prettier](https://prettier.io/)
+- [sass](https://www.npmjs.com/package/sass)
 
 ## ✅ Executando o projeto
 
