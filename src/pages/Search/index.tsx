@@ -13,7 +13,7 @@ const Search: React.FC = () => {
 
   const repositories = useSelector((state: ApplicationState) => state.repositories);
 
-  const { error } = repositories;
+  const { loading, error } = repositories;
 
   const dispatch = useDispatch();
 
@@ -28,10 +28,8 @@ const Search: React.FC = () => {
 
     dispatch(RepositoriesActions.loadRequest(username));
 
-    if (!error) {
-      history.push('/result');
-    }
-  }, [dispatch, history, error]);
+    if (!loading && !error) { history.push('/result'); }
+  }, [dispatch, error, history, loading]);
 
   const handleClearInput = useCallback((e: FormEvent) => {
     e.preventDefault();
