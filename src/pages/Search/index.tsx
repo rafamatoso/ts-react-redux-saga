@@ -28,7 +28,9 @@ const Search: React.FC = () => {
 
     dispatch(RepositoriesActions.loadRequest(username));
 
-    if (!loading && !error) { history.push('/result'); }
+    if (!loading && !error) {
+      history.push('/result');
+    }
   }, [dispatch, error, history, loading]);
 
   const handleClearInput = useCallback((e: FormEvent) => {
