@@ -14,9 +14,14 @@ body,
 
   font: 1.1rem Catamaran;
 
+  &:focus {
+    outline: none;
+  }
+
   &:-webkit-autofill::first-line {
     font-family: Catamaran;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+    font-weight: bold;
   }
 
   &:-webkit-autofill {
