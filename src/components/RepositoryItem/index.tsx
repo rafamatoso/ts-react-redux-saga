@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { Repository } from '../../store/ducks/repositories/types';
 
 import './styles.scss';
@@ -15,4 +16,4 @@ const RepositoryItem: React.FC<OwnProps> = ({ repository }: OwnProps) => (
   </>
 );
 
-export default RepositoryItem;
+export default memo(RepositoryItem);
