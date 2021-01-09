@@ -37,8 +37,6 @@ const Search: React.FC = () => {
     formRef.current?.reset();
   }, []);
 
-  console.log(repositories.data);
-
   return (
     <div id="search-container">
       <form onSubmit={handleSubmit} ref={formRef}>

@@ -13,6 +13,9 @@ export enum RepositoriesTypes {
 export interface Repository {
   id: number;
   name: string;
+  url: string;
+  // eslint-disable-next-line camelcase
+  stargazers_count: number;
 }
 
 /**
