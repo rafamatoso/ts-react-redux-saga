@@ -35,6 +35,10 @@
     &:hover {
       opacity: 0.85 !important;
     }
+
+    &:disabled {
+      cursor: not-allowed;
+    }
   }
 
   .clear-button {
@@ -64,7 +68,6 @@
       transform: translate(-50%, -50%) rotate(-45deg);
     }
 
-    &:focus,
     &:hover {
       opacity: 1;
     }
