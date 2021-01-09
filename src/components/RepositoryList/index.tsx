@@ -1,4 +1,4 @@
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { ApplicationState } from '../../store';
 import { Repository } from '../../store/ducks/repositories/types';
 import RepositoryItem from '../RepositoryItem';
@@ -7,7 +7,11 @@ interface Props {
   repositories: Repository[];
 }
 
-const RepositoryList: React.FC<Props> = ({ repositories }: Props) => {
+const RepositoryList: React.FC<Props> = () => {
+  const repositories = useSelector((state: ApplicationState) => state.repositories);
+
+  const { data } = repositories;
+
   const renderRepositoryItem = (repository: Repository) => (
     <RepositoryItem key={repository.id} repository={repository} />
   );
@@ -15,14 +19,10 @@ const RepositoryList: React.FC<Props> = ({ repositories }: Props) => {
   return (
     <>
       <ul>
-        {repositories.map((repository) => renderRepositoryItem(repository))}
+        {data.map((repository) => renderRepositoryItem(repository))}
       </ul>
     </>
   );
 };
 
-const mapStateToProps = (state: ApplicationState) => ({
-  repositories: state.repositories.data,
-});
-
-export default connect(mapStateToProps)(RepositoryList);
+export default RepositoryList;
