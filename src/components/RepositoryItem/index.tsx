@@ -1,13 +1,17 @@
 import { Repository } from '../../store/ducks/repositories/types';
 
+import './styles.scss';
+
 interface OwnProps {
     repository: Repository;
 }
 
 const RepositoryItem: React.FC<OwnProps> = ({ repository }: OwnProps) => (
   <>
-    <li>{repository.name}</li>
-    <li>{repository.stargazers_count}</li>
+    <div id="item-container">
+      <li>{repository.name}</li>
+      <li>{repository.stargazers_count}</li>
+    </div>
   </>
 );
 
