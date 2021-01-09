@@ -6,6 +6,9 @@ interface OwnProps {
 
 export default function RepositoryItem({ repository }: OwnProps) {
   return (
-    <li>{repository.name}</li>
+    <>
+      <li>{repository.name}</li>
+      <li>{repository.stargazers_count}</li>
+    </>
   );
 }
