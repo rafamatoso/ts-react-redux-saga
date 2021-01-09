@@ -4,11 +4,11 @@ interface OwnProps {
     repository: Repository;
 }
 
-export default function RepositoryItem({ repository }: OwnProps) {
-  return (
-    <>
-      <li>{repository.name}</li>
-      <li>{repository.stargazers_count}</li>
-    </>
-  );
-}
+const RepositoryItem: React.FC<OwnProps> = ({ repository }: OwnProps) => (
+  <>
+    <li>{repository.name}</li>
+    <li>{repository.stargazers_count}</li>
+  </>
+);
+
+export default RepositoryItem;
