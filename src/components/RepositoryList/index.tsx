@@ -17,13 +17,13 @@ const RepositoryList: React.FC = () => {
   );
 
   const renderRepositoryList = () => (
-
     <ul id="list-container">
-      {data.map((repository) => (
-        <RepositoryItem key={repository.id} repository={repository} />
-      ))}
+      {data
+        .sort((previous, current) => current.stargazers_count - previous.stargazers_count)
+        .map((repository) => (
+          <RepositoryItem key={repository.id} repository={repository} />
+        ))}
     </ul>
-
   );
 
   return (
