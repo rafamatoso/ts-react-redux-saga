@@ -6,6 +6,7 @@ export enum RepositoriesTypes {
   LOAD_REQUEST = '@repositories/LOAD_REQUEST',
   LOAD_SUCCESS = '@repositories/LOAD_SUCCESS',
   LOAD_FAILURE = '@repositories/LOAD_FAILURE',
+  CLEAR_STATE = '@repositories/CLEAR_STATE',
 }
 
 /**
@@ -25,4 +26,5 @@ export interface RepositoriesState {
   readonly data: Repository[];
   readonly loading: boolean;
   readonly error: boolean;
+  readonly path?: string;
 }
