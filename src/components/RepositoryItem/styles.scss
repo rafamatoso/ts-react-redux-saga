@@ -19,6 +19,23 @@
     background-color: var(--color-item-bg);
     color: var(--color-item-font);
   }
+
+  #star-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .star-icon {
+      width: 20px;
+      height: 20px;
+      margin: 2px;
+    }
+
+    .star-count {
+      font-size: 1.25rem;
+      margin: 2px 4px 0 4px;
+    }
+  }
 }
 
 @media (max-width: 700px) {
