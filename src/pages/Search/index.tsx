@@ -33,6 +33,8 @@ const Search: React.FC = () => {
 
     if (!loading && !error) {
       history.push('/result');
+    } else {
+      history.push('/notfound');
     }
   }, [dispatch, error, history, loading]);
 
