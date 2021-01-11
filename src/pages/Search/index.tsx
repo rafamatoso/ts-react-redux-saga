@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { ApplicationState } from '../../store';
 import * as RepositoriesActions from '../../store/ducks/repositories/actions';
+import { Loading } from '../../components/Loading';
 
 import './styles.scss';
 
@@ -14,9 +15,7 @@ const Search: React.FC = () => {
 
   const [disabled, setDisabled] = useState(true);
 
-  const repositories = useSelector((state: ApplicationState) => state.repositories);
-
-  const { loading, error } = repositories;
+  const { loading } = useSelector((state: ApplicationState) => state.repositories);
 
   const dispatch = useDispatch();
 
@@ -29,14 +28,8 @@ const Search: React.FC = () => {
 
     const username = inputElement?.value;
 
-    dispatch(RepositoriesActions.loadRequest(username));
-
-    if (!loading && !error) {
-      history.push('/result');
-    } else {
-      history.push('/notfound');
-    }
-  }, [dispatch, error, history, loading]);
+    dispatch(RepositoriesActions.loadRequest(username, history.push));
+  }, [dispatch, history.push]);
 
   const handleInputChanges = (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
@@ -50,7 +43,7 @@ const Search: React.FC = () => {
     formRef.current?.reset();
   }, []);
 
-  return (
+  const renderSearch = () => (
     <div id="search-container">
       <form onSubmit={handleSubmit} ref={formRef}>
         <input
@@ -76,6 +69,12 @@ const Search: React.FC = () => {
         </button>
       </form>
     </div>
+  );
+
+  return (
+    <>
+      {loading ? Loading() : renderSearch()}
+    </>
   );
 };
 
