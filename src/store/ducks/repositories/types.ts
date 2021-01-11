@@ -26,5 +26,4 @@ export interface RepositoriesState {
   readonly data: Repository[];
   readonly loading: boolean;
   readonly error: boolean;
-  readonly path?: string;
 }
