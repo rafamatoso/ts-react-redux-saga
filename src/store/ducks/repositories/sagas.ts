@@ -10,7 +10,9 @@ export function* load(action: Effect) {
     );
 
     yield put(loadSuccess(response.data));
+    action.payload.meta('/result');
   } catch (error) {
     yield put(loadFailure());
+    action.payload.meta('/notfound');
   }
 }
