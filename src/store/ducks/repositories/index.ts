@@ -5,7 +5,6 @@ const INITIAL_STATE: RepositoriesState = {
   data: [],
   error: false,
   loading: false,
-  path: '/',
 };
 
 const reducer: Reducer<RepositoriesState> = (state = INITIAL_STATE, action) => {
@@ -28,9 +27,6 @@ const reducer: Reducer<RepositoriesState> = (state = INITIAL_STATE, action) => {
         error: true,
         data: [],
       };
-
-    case RepositoriesTypes.CLEAR_STATE:
-      return { ...state, path: '/' };
 
     default:
       return state;
