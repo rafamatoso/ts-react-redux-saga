@@ -9,6 +9,7 @@ import * as RepositoriesActions from '../../store/ducks/repositories/actions';
 import { Loading } from '../../components/Loading';
 
 import './styles.scss';
+import { logo } from '../../assets/logo';
 
 const Search: React.FC = () => {
   const history = useHistory();
@@ -41,34 +42,41 @@ const Search: React.FC = () => {
     e.preventDefault();
 
     formRef.current?.reset();
+
+    setDisabled(true);
   }, []);
 
   const renderSearch = () => (
-    <div id="search-container">
-      <form onSubmit={handleSubmit} ref={formRef}>
-        <input
-          type="text"
-          name="username"
-          className="input"
-          placeholder="Nome do usuário"
-          onChange={(e) => handleInputChanges(e)}
-        />
-        <button
-          className="clear-button"
-          aria-label="Close"
-          type="button"
-          onClick={handleClearInput}
-        />
-        <button
-          className="submit-button"
-          aria-label="Submit"
-          type="submit"
-          disabled={disabled}
-        >
-          Pesquisar
-        </button>
-      </form>
-    </div>
+    <>
+      <div id="logo-container">
+        <img src={logo.github} alt="Logo" />
+      </div>
+      <div id="search-container">
+        <form onSubmit={handleSubmit} ref={formRef}>
+          <input
+            type="text"
+            name="username"
+            className="input"
+            placeholder="Nome do usuário"
+            onChange={(e) => handleInputChanges(e)}
+          />
+          <button
+            className="clear-button"
+            aria-label="Close"
+            type="button"
+            onClick={handleClearInput}
+          />
+          <button
+            className="submit-button"
+            aria-label="Submit"
+            type="submit"
+            disabled={disabled}
+          >
+            Pesquisar
+          </button>
+        </form>
+      </div>
+    </>
   );
 
   return (
