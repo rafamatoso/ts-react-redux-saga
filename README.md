@@ -1,6 +1,6 @@
 # 📚 ts-react-redux-saga
 
-Projeto onde é possível realizar uma busca pelos repositórios de um dado usuário a partir do seu nome no Github. Caso o usuário exista, será apresentada uma listagem dos repositórios.\
+Projeto onde é possível realizar uma busca pelos repositórios no Github de um dado usuário a partir do seu nome. Caso o usuário exista, será apresentada uma listagem dos repositórios.\
 A motivação para este projeto é unir os conceitos de Typescript, React, Hooks, Redux, Redux-Saga e outros.\
 O conceito inicial foi apresentado na vídeo-aula **[TypeScript com ReactJS, Redux e Redux Saga](https://www.youtube.com/watch?v=OXxul6AvXNs&t)** da **[Rocketseat](https://rocketseat.com.br/)**.
 
