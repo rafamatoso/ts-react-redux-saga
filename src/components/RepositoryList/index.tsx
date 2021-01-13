@@ -10,14 +10,22 @@ const RepositoryList: React.FC = () => {
 
   const { data, loading } = repositories;
 
+  const { owner } = data[0];
+
   const renderRepositoryList = () => (
-    <ul id="list-container">
-      {data
-        .sort((previous, current) => current.stargazers_count - previous.stargazers_count)
-        .map((repository) => (
-          <RepositoryItem key={repository.id} repository={repository} />
-        ))}
-    </ul>
+    <>
+      <div id="owner-container">
+        <img src={owner.avatar_url} alt="Avatar" />
+        <h1>{owner.login}</h1>
+      </div>
+      <ul id="list-container">
+        {data
+          .sort((previous, current) => current.stargazers_count - previous.stargazers_count)
+          .map((repository) => (
+            <RepositoryItem key={repository.id} repository={repository} />
+          ))}
+      </ul>
+    </>
   );
 
   return (
