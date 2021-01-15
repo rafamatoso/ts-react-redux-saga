@@ -8,6 +8,13 @@
     width: 10rem;
     height: 10rem;
     margin: 2rem;
+    position: relative;
+    transition: transform 0.7s ease-in-out;
+
+    &:hover {
+      transform: translateY(-20px);
+      animation-iteration-count: infinite;
+    }
   }
 }
 
@@ -25,7 +32,7 @@
   }
 
   .input {
-    min-width: 265px;
+    min-width: 350px;
     width: 25.1vw;
     padding: 0.5rem;
     font-size: 1.4rem;
