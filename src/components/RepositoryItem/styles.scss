@@ -5,6 +5,7 @@
   padding: 0.5rem;
   width: 500px;
   border: 2px solid var(--color-border);
+  position: relative;
 
   li {
     list-style: none;
@@ -18,6 +19,14 @@
   &:hover {
     background-color: var(--color-item-bg);
     color: var(--color-item-font);
+
+    animation: increase-item-in 0.4s forwards;
+    animation-timing-function: ease-in-out;
+  }
+
+  &:not(:hover) {
+    animation: decrease-item-out 0.7s forwards;
+    animation-timing-function: ease-in-out;
   }
 
   #star-container {
@@ -41,5 +50,23 @@
 @media (max-width: 700px) {
   #item-container {
     width: 90%;
+  }
+}
+
+@keyframes increase-item-in {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes decrease-item-out {
+  from {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1);
   }
 }
