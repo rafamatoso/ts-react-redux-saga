@@ -8,10 +8,10 @@ import NotFound from '../pages/NotFound';
 export const Routes: React.FC = () => (
   <BrowserRouter>
     <Switch>
-      <Route path="/" exact component={Search} />
+      <Route path="/home" exact component={Search} />
       <Route path="/result" exact component={RepositoryList} />
       <Route path="/notfound" exact component={NotFound} />
-      <Route path="/" exact component={() => <Redirect to="/search" />} />
+      <Route path="/" exact component={() => <Redirect to="/home" />} />
     </Switch>
   </BrowserRouter>
 );
