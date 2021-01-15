@@ -29,7 +29,7 @@ const RepositoryItem: React.FC<OwnProps> = ({ repository }: OwnProps) => {
         <div id="star-container">
           <img
             className="star-icon"
-            src={icon.star}
+            src={stargazers_count > 0 ? icon.yellowStar : icon.emptyStar}
             alt="Star"
           />
           <li className="star-count">{stargazers_count > 0 ? stargazers_count : ''}</li>
