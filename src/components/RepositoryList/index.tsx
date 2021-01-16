@@ -15,7 +15,9 @@ const RepositoryList: React.FC = () => {
   const renderRepositoryList = () => (
     <>
       <div id="owner-container">
-        <img src={owner.avatar_url} alt="Avatar" />
+        <div id="img-container">
+          <img src={owner.avatar_url} alt="Avatar" />
+        </div>
         <h1>{owner.login}</h1>
       </div>
       <ul id="list-container">
