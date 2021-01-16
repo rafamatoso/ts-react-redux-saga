@@ -1,25 +1,38 @@
+@import './colors.scss';
+
 :root {
-  --color-page-bg: #fcfcfc;
-  --color-notfound-bg: black;
-  --color-input-bg: #f1f1f1;
-  --color-btn-bg: black;
-  --color-border: black;
-  --color-item-bg: #a0a0a0;
-  --color-item-font: white;
+  --color-app-bg: #{$color-app-bg};
+  --color-page-notfound-bg: #{$color-page-notfound-bg};
+  --color-input-bg: #{$color-input-bg};
+  --color-search-border: #{$color-border};
+  --color-btn-submit-bg: #{$color-btn-submit-bg};
+  --color-border: #{$color-border};
+  --color-item-border: #{$color-item-border};
+  --color-item-font: #{$color-item-font};
+  --color-item-hover-bg: #{$color-item-hover-bg};
+  --color-item-hover-font: #{$color-item-hover-font};
+}
+
+.dark {
+  --color-app-bg: #{$color-app-bg-dark};
+  --color-item-border: #{$color-item-border-dark};
+  --color-item-font: #{$color-item-font-dark};
+  --color-item-hover-bg: #{$color-item-hover-bg-dark};
+  --color-item-hover-font: #{$color-item-hover-font-dark};
 }
 
 html,
 body,
 #root {
   height: 100vh;
-  background-color: var(--color-page-bg);
+  background-color: var(--color-app-bg);
 }
 
 * {
   margin: 0;
   padding: 0;
-
   font: 1rem Catamaran;
+  transition: all 0.15s ease;
 
   &:focus {
     outline: none;
@@ -49,6 +62,12 @@ body,
   }
 }
 
+img {
+  box-shadow: 4px 4px 15px -7px #000000;
+  -webkit-box-shadow: 4px 4px 15px -7px #000000;
+  border-radius: 50%;
+}
+
 button {
   cursor: pointer;
   transition: 0.2s ease-in-out;
@@ -63,8 +82,8 @@ button {
   }
 }
 
-@media (min-width: 700px) {
+@media (max-width: 700px) {
   :root {
-    font-size: 90%;
+    font-size: 60%;
   }
 }
