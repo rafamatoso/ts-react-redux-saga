@@ -1,8 +1,14 @@
+#switch-container {
+  display: flex;
+  height: 8%;
+  justify-content: flex-end;
+}
+
 #logo-container,
 #search-container {
   display: flex;
   justify-content: center;
-  height: 50%;
+  height: 45.5%;
 }
 
 #logo-container {
@@ -29,6 +35,8 @@
     display: flex;
     justify-content: center;
     align-items: stretch;
+    box-shadow: 4px 4px 15px -7px #000000;
+    -webkit-box-shadow: 4px 4px 15px -7px #000000;
   }
 
   .input {
@@ -36,7 +44,7 @@
     width: 25.1vw;
     padding: 0.5rem;
     font-size: 1.4rem;
-    border: 2px solid var(--color-border);
+    border: 2px solid var(--color-search-border);
   }
 
   .submit-button {
@@ -45,8 +53,8 @@
     padding: 0.5rem;
     font-size: 1.5rem;
     font-weight: bold;
-    border: 2px solid var(--color-border);
-    background-color: var(--color-btn-bg);
+    border: 2px solid var(--color-search-border);
+    background-color: var(--color-btn-submit-bg);
     color: white;
   }
 
@@ -80,6 +88,25 @@
 
     &:hover {
       opacity: 1;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  #search-container {
+    .input {
+      min-width: 50vw;
+    }
+
+    .submit-button {
+      min-width: 30vw;
+    }
+  }
+
+  #logo-container {
+    img {
+      width: 13rem;
+      height: 13rem;
     }
   }
 }
