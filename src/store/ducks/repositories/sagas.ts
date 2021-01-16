@@ -2,6 +2,7 @@
 import { call, Effect, put } from 'redux-saga/effects';
 import api from '../../../services/api';
 import { loadFailure, loadSuccess } from './actions';
+import { Repository } from './types';
 
 interface DataResponse {
   public_repos: number;
@@ -12,7 +13,7 @@ interface UserResponse {
 }
 
 interface ReposResponse {
-  data: any;
+  data: Repository[];
 }
 
 export function* load(action: Effect) {
