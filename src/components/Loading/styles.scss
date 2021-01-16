@@ -5,3 +5,7 @@
   align-items: center;
   height: 100%;
 }
+
+#loading-container > * {
+  fill: var(--color-item-font) !important;
+}
