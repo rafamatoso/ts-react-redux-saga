@@ -1,6 +1,5 @@
 // Light Mode
 $color-app-bg: #eeeeee;
-$color-page-notfound-bg: black;
 $color-input-bg: #f1f1f1;
 $color-btn-submit-bg: black;
 $color-border: black;
@@ -8,10 +7,10 @@ $color-item-border: black;
 $color-item-font: black;
 $color-item-hover-bg: #a0a0a0;
 $color-item-hover-font: white;
+$color-page-notfound-bg: black;
 
 // Dark Mode
 $color-app-bg-dark: #5a5a5a;
-$color-page-notfound-bg-dark: black;
 $color-input-bg-dark: #f1f1f1;
 $color-btn-submit-bg-dark: black;
 $color-border-dark: white;
@@ -19,3 +18,9 @@ $color-item-border-dark: #c4c4c4;
 $color-item-font-dark: white;
 $color-item-hover-bg-dark: white;
 $color-item-hover-font-dark: black;
+$color-page-notfound-bg-dark: black;
+
+//Both modes
+$color-btn-submit-font: white;
+$color-page-notfound-font: white;
+$color-shadow: black;
