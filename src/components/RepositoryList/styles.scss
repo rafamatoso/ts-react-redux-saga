@@ -7,7 +7,7 @@
 
 #owner-container {
   justify-content: center;
-  height: 22%;
+  height: 25%;
 
   #img-container {
     width: 150px;
@@ -31,11 +31,20 @@
 
 #list-container {
   justify-content: flex-start;
-  height: 78%;
+  height: 75%;
   overflow-y: auto;
 }
 
-@media (max-height: 823px) {
+@media (max-height: 842px) {
+  #owner-container {
+    #img-container {
+      width: 115px;
+      height: 115px;
+    }
+  }
+}
+
+@media (max-height: 736px) {
   #owner-container {
     height: 25%;
 
@@ -45,7 +54,7 @@
     }
 
     h1 {
-      font-size: 1.2rem;
+      font-size: 1.4rem;
     }
   }
 
