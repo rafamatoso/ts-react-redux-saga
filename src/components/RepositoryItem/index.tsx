@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import { memo } from 'react';
 import { icon } from '../../assets/icons';
 import { Repository } from '../../store/ducks/repositories/types';
@@ -19,7 +20,6 @@ const RepositoryItem: React.FC<OwnProps> = ({ repository }: OwnProps) => {
       <div
         id="item-container"
         onClick={() => goToRepository(html_url)}
-        onKeyDown={() => goToRepository(html_url)}
         role="button"
         tabIndex={0}
       >
