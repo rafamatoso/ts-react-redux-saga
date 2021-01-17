@@ -25,25 +25,19 @@ const Search: React.FC = () => {
 
   const handleSubmit = useCallback((e: FormEvent) => {
     e.preventDefault();
-
     const inputElement = formRef.current?.elements.namedItem('username') as HTMLInputElement;
-
     const username = inputElement?.value;
-
     dispatch(RepositoriesActions.loadRequest(username, history.push));
   }, [dispatch, history.push]);
 
   const handleInputChanges = (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
-
     return value ? setDisabled(false) : setDisabled(true);
   };
 
   const handleClearInput = useCallback((e: FormEvent) => {
     e.preventDefault();
-
     formRef.current?.reset();
-
     setDisabled(true);
   }, []);
 
