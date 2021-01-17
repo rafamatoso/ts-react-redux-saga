@@ -7,8 +7,8 @@
   border: 2px solid var(--color-item-border);
   position: relative;
   color: var(--color-item-font);
-  box-shadow: 4px 4px 15px -7px #000000;
-  -webkit-box-shadow: 4px 4px 15px -7px #000000;
+  box-shadow: 4px 4px 15px -7px var(--color-shadow);
+  -webkit-box-shadow: 4px 4px 15px -7px var(--color-shadow);
 
   li {
     list-style: none;
