@@ -1,8 +1,7 @@
-/* eslint-disable camelcase */
 import { call, Effect, put } from 'redux-saga/effects';
-import api from '../../../services/api';
 import { loadFailure, loadSuccess } from './actions';
 import { Repository } from './types';
+import api from '../../../services/api';
 
 interface DataResponse {
   public_repos: number;

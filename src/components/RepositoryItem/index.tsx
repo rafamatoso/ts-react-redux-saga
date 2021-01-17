@@ -1,8 +1,6 @@
-/* eslint-disable camelcase */
 import { memo } from 'react';
 import { icon } from '../../assets/icons';
 import { Repository } from '../../store/ducks/repositories/types';
-
 import './styles.scss';
 
 interface OwnProps {

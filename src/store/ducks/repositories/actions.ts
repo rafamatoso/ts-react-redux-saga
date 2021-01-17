@@ -1,4 +1,3 @@
-/* eslint-disable implicit-arrow-linebreak */
 import { Action, action } from 'typesafe-actions';
 import { RepositoriesTypes, Repository } from './types';
 

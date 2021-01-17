@@ -24,6 +24,8 @@ module.exports = {
   plugins: ['react', 'import', 'jsx-a11y', 'prettier'],
   rules: {
     'react/react-in-jsx-scope': 'off',
+    'react/jsx-props-no-spreading': 'off',
+    'react/require-default-props': 'off',
     'react/jsx-filename-extension': [
       'error',
       {
@@ -40,6 +42,8 @@ module.exports = {
         tsx: 'never',
       },
     ],
+    camelcase: 'off',
+    'implicit-arrow-linebreak': 'off',
     'no-shadow': 'off',
     'import/prefer-default-export': 'off',
     'no-use-before-define': 'off',
@@ -47,8 +51,6 @@ module.exports = {
     '@typescript-eslint/explicit-member-accessibility': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-use-before-define': ['error'],
-    'max-len': ['error', { code: 110 }],
-    'arrow-body-style': ['error', 'as-needed'],
   },
   settings: {
     'import/parsers': {
