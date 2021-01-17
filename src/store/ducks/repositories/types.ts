@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 /**
  * Action types
  */
@@ -31,4 +30,5 @@ export interface RepositoriesState {
   readonly data: Repository[];
   readonly loading: boolean;
   readonly error: boolean;
+  readonly showResult: boolean;
 }

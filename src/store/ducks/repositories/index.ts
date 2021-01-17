@@ -5,6 +5,7 @@ const INITIAL_STATE: RepositoriesState = {
   data: [],
   error: false,
   loading: false,
+  showResult: false,
 };
 
 const reducer: Reducer<RepositoriesState> = (state = INITIAL_STATE, action) => {
@@ -18,6 +19,7 @@ const reducer: Reducer<RepositoriesState> = (state = INITIAL_STATE, action) => {
         loading: false,
         error: false,
         data: action.payload.data,
+        showResult: true,
       };
 
     case RepositoriesTypes.LOAD_FAILURE:
