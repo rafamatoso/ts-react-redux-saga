@@ -1,4 +1,4 @@
-# 📚 **GITHUB-SEARCH** - ts-react-redux-saga
+# 📚 [**github-repos-search**](https://github-repos-search.vercel.app/home)
 
 Projeto onde é possível realizar uma busca pelos repositórios no Github de um dado usuário a partir do seu nome na plataforma. Caso o usuário exista, será apresentada uma listagem com todos os seus repositórios ordenados (quantidade de estrelas + ordem alfabética).
 
@@ -30,7 +30,7 @@ Projeto onde é possível realizar uma busca pelos repositórios no Github de um
 - [scss](https://www.npmjs.com/package/sass)
 - [react-loading](https://www.npmjs.com/package/react-loading)
 
-## ✅ Executando o projeto
+## ✅ Executando o projeto localmente
 
 No diretório raiz do projeto, execute o comando no terminal:
 
