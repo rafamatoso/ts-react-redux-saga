@@ -35,8 +35,8 @@
     display: flex;
     justify-content: center;
     align-items: stretch;
-    box-shadow: 4px 4px 15px -7px #000000;
-    -webkit-box-shadow: 4px 4px 15px -7px #000000;
+    box-shadow: 4px 4px 15px -7px var(--color-shadow);
+    -webkit-box-shadow: 4px 4px 15px -7px var(--color-shadow);
   }
 
   .input {
@@ -44,7 +44,12 @@
     width: 25.1vw;
     padding: 0.5rem;
     font-size: 1.4rem;
-    border: 2px solid var(--color-search-border);
+    font-weight: bold;
+    border: 2px solid #ebebeb;
+
+    &:focus {
+      border: 2px solid var(--color-search-border);
+    }
   }
 
   .submit-button {
@@ -53,9 +58,14 @@
     padding: 0.5rem;
     font-size: 1.5rem;
     font-weight: bold;
-    border: 2px solid var(--color-search-border);
+    border: 2px solid transparent;
+
     background-color: var(--color-btn-submit-bg);
-    color: white;
+    color: var(--color-btn-submit-font);
+
+    &:disabled {
+      opacity: 0.4;
+    }
   }
 
   .clear-button {
@@ -72,8 +82,8 @@
       content: ' ';
       position: absolute;
       top: 50%;
-      right: 1rem;
-      height: 20px;
+      right: 1.4rem;
+      height: 1.8rem;
       width: 4px;
       background-color: currentColor;
     }

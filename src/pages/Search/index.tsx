@@ -1,6 +1,6 @@
 import {
   ChangeEvent,
-  FormEvent, useCallback, useRef, useState,
+  FormEvent, useCallback, useState,
 } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
@@ -14,32 +14,25 @@ import './styles.scss';
 
 const Search: React.FC = () => {
   const history = useHistory();
-
-  const [disabled, setDisabled] = useState(true);
-
   const { loading } = useSelector((state: ApplicationState) => state.repositories);
-
   const dispatch = useDispatch();
-
-  const formRef = useRef<HTMLFormElement>(null);
-
-  const handleSubmit = useCallback((e: FormEvent) => {
-    e.preventDefault();
-    const inputElement = formRef.current?.elements.namedItem('username') as HTMLInputElement;
-    const username = inputElement?.value;
-    dispatch(RepositoriesActions.loadRequest(username, history.push));
-  }, [dispatch, history.push]);
+  const [username, setUsername] = useState('');
 
   const handleInputChanges = (e: ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
     const { value } = e.target;
-    return value ? setDisabled(false) : setDisabled(true);
+    setUsername(value);
   };
 
   const handleClearInput = useCallback((e: FormEvent) => {
     e.preventDefault();
-    formRef.current?.reset();
-    setDisabled(true);
+    setUsername('');
   }, []);
+
+  const handleSubmit = useCallback((e: FormEvent) => {
+    e.preventDefault();
+    dispatch(RepositoriesActions.loadRequest(username, history));
+  }, [dispatch, history, username]);
 
   const renderSearch = () => (
     <>
@@ -50,12 +43,13 @@ const Search: React.FC = () => {
         <img src={logo.github} alt="Logo" />
       </div>
       <div id="search-container">
-        <form onSubmit={handleSubmit} ref={formRef}>
+        <form onSubmit={handleSubmit}>
           <input
             type="text"
             name="username"
             className="input"
             placeholder="Nome do usuário"
+            value={username}
             onChange={(e) => handleInputChanges(e)}
           />
           <button
@@ -68,7 +62,7 @@ const Search: React.FC = () => {
             className="submit-button"
             aria-label="Submit"
             type="submit"
-            disabled={disabled}
+            disabled={!username}
           >
             Pesquisar
           </button>
