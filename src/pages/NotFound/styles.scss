@@ -3,9 +3,13 @@
   height: 100%;
   background-color: var(--color-page-notfound-bg);
 
-  #not-found-msg-container {
+  #msg-container,
+  #footer-container {
     display: flex;
     justify-content: center;
+  }
+
+  #msg-container {
     align-items: center;
     width: 100%;
     height: 90%;
@@ -34,8 +38,6 @@
   }
 
   #footer-container {
-    display: flex;
-    justify-content: center;
     align-items: flex-end;
     height: 10%;
     color: var(--color-item-hover-font);
