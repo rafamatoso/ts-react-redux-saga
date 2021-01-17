@@ -1,13 +1,25 @@
-# 📚 ts-react-redux-saga
+# 📚 **GITHUB-SEARCH** - ts-react-redux-saga
 
-Projeto onde é possível realizar uma busca pelos repositórios no Github de um dado usuário a partir do seu nome. Caso o usuário exista, será apresentada uma listagem dos repositórios.\
-A motivação para este projeto é unir os conceitos de Typescript, React, Hooks, Redux, Redux-Saga e outros.\
-O conceito inicial foi apresentado na vídeo-aula **[TypeScript com ReactJS, Redux e Redux Saga](https://www.youtube.com/watch?v=OXxul6AvXNs&t)** da **[Rocketseat](https://rocketseat.com.br/)**.
+Projeto onde é possível realizar uma busca pelos repositórios no Github de um dado usuário a partir do seu nome na plataforma. Caso o usuário exista, será apresentada uma listagem com todos os seus repositórios ordenados (quantidade de estrelas + ordem alfabética).
+
+## 📌 Objetivo
+
+- Integração entre Typescript, React e Hooks de forma natural.
+
+- Praticar gerenciamento de estados da aplicação com Redux e tratar efeitos colaterais de chamadas assíncronas com Redux Saga.
+
+- Praticar e permitir troca de tema (🌞/🌜) da aplicação.
+
+- Praticar os alguns conceitos de responsividade e mobile-first.
+
+## 📖 Baseado em
+
+- Vídeo-aula **[TypeScript com ReactJS, Redux e Redux Saga](https://www.youtube.com/watch?v=OXxul6AvXNs&t)** da **[Rocketseat](https://rocketseat.com.br/)**.
 
 ## 💻 Tecnologias
 
 - [Typescript](https://www.typescriptlang.org/)
-- [ReactJs](https://pt-br.reactjs.org/)
+- [React](https://pt-br.reactjs.org/)
 - [React Redux](https://react-redux.js.org/)
 - [Redux Saga](https://redux-saga.js.org/)
 - [typesafe-actions](https://github.com/piotrwitek/typesafe-actions)
@@ -15,7 +27,7 @@ O conceito inicial foi apresentado na vídeo-aula **[TypeScript com ReactJS, Red
 - [axios](https://github.com/axios/axios)
 - [eslint](https://eslint.org/)
 - [prettier](https://prettier.io/)
-- [sass/scss](https://www.npmjs.com/package/sass)
+- [scss](https://www.npmjs.com/package/sass)
 - [react-loading](https://www.npmjs.com/package/react-loading)
 
 ## ✅ Executando o projeto
