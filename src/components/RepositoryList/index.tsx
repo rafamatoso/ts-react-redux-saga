@@ -2,7 +2,6 @@ import { useSelector } from 'react-redux';
 import { ApplicationState } from '../../store';
 import RepositoryItem from '../RepositoryItem';
 import { Loading } from '../Loading';
-
 import './styles.scss';
 
 const RepositoryList: React.FC = () => {
