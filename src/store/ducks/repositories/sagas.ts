@@ -16,7 +16,7 @@ interface ReposResponse {
 }
 
 export function* load(action: Effect) {
-  const { username, meta } = action.payload;
+  const { username, history } = action.payload;
 
   try {
     const userResponse: UserResponse = yield call(api.get, `users/${username}`);
@@ -34,9 +34,9 @@ export function* load(action: Effect) {
     );
 
     yield put(loadSuccess(response.data));
-    meta('/result');
+    history.push('/result');
   } catch (error) {
     yield put(loadFailure());
-    meta('/notfound');
+    history.push('/notfound');
   }
 }
